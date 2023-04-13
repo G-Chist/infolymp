@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block title %}Results{% endblock %} {% block content%}
+<style>
+body {background-image: url(static/bg_crumpled.png)}
+button {height: 50px, width: 250px;}
+table {width: 100%; table-layout: fixed; text-align: top; margin-bottom: 20px; border-collapse: collapse;}
+td {text-align: center; vertical-align: top; nowrap: nowrap;}
+thead {display: table-header-group}
+.list-group-item {background-color: rgba(255, 255, 255, 0.5);}
+.toptitle {margin-bottom: 5rem;}
+</style>
+<div align = center>
+<table border="0">
+
+<thead>
+<tr>
+<th><h1 align = "center">1</h1></th>
+<th><h1 align = "center">2</h1></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+
+<td>
+<pre style="font-size: 20px">{{message1}}</pre>
+</td>
+
+<td>
+<pre style="font-size: 20px">{{message2}}</pre>
+</td>
+
+</tr>
+</tbody>
+
+</table>
+</div>
+{% endblock %}

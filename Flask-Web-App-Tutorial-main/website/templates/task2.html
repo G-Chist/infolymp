@@ -1,0 +1,51 @@
+{% extends "base.html" %} {% block title %}Task 2{% endblock %} {% block content%}
+<style>
+body {background-image: url(static/bg_crumpled.png)}
+button {height: 50px, width: 250px;}
+.form-task {height: 300px; width: 70vw; margin-top: 30px; font-size: 25px; resize: vertical;}
+.list-group-item {background-color: rgba(255, 255, 255, 0.5);}
+.centered {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.btn-add {
+  font-size: 20px;
+  font-weight: 200;
+  width: 40%;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: #CBFFCD;
+  transition: 0.5s;
+}
+.btn-add:hover {
+  background-color: #00FF66;
+  transition: 0.5s;
+}
+.toptitle {margin-bottom: 3rem;}
+</style>
+<h1 align="center" class="toptitle">Задача II</h1>
+<h3 align="center">Найдите сумму чётных цифр числа a</h3>
+<ul class="list-group list-group-flush" id="notes">
+  {% for note2 in user.notes2 %}
+  <li class="list-group-item">
+    {{ 'Результат: ' + note2.data + '/100' }}
+    <!--<button type="button" class="close" onClick="deleteNote2({{ note2.id }})"><span aria-hidden="true">&times;</span></button>-->
+  </li>
+  {% endfor %}
+</ul>
+<form method="POST">
+  <div align="center" class="centered">
+  <textarea name="note" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="note" class="form-task">def evendigits(a):</textarea>
+  <br />
+    <button type="submit" class="btn btn-add">Загрузить решение</button>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "base.html" %} {% block title %}Task 1{% endblock %} {% block content%}
+<style>
+body {background-image: url(static/bg_crumpled.png)}
+button {height: 50px, width: 250px;}
+.form-task {height: 300px; width: 70vw; margin-top: 30px; font-size: 25px; resize: vertical; autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"}
+.list-group-item {background-color: rgba(255, 255, 255, 0.5);}
+.centered {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.btn-add {
+  font-size: 20px;
+  font-weight: 200;
+  width: 40%;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: #CBFFCD;
+  transition: 0.5s;
+}
+.btn-add:hover {
+  background-color: #00FF66;
+  transition: 0.5s;
+}
+.toptitle {margin-bottom: 3rem;}
+</style>
+<h1 align="center" class="toptitle">Задача I</h1>
+<h3 align="center">Найдите дискриминант квадратного уравнения <i>ax² + bx + c</i>, если известны a, b и c</h3>
+<ul class="list-group list-group-flush" id="notes">
+  {% for note in user.notes %}
+  <li class="list-group-item">
+    {{ 'Результат: ' + note.data + '/100' }}
+    <!--<button type="button" class="close" onClick="deleteNote({{ note.id }})"><span aria-hidden="true">&times;</span></button>-->
+  </li>
+  {% endfor %}
+</ul>
+<form method="POST">
+  <div align="center" class="centered">
+  <textarea name="note" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="note" class="form-task">def discr(a, b, c):</textarea>
+  <br />
+    <button type="submit" class="btn btn-add">Загрузить решение</button>
+  </div>
+</form>
+{% endblock %}
